@@ -1,7 +1,11 @@
+import styles from './footer.module.css';
 const Footer = () => {
   return (
-    <footer>
-      <p>© 2021 Blog App</p>
+    <footer className={styles.container}>
+      <div className={styles.logo}>lamadev</div>
+      <div className={styles.text}>
+        © 2021 Blog App
+      </div>
     </footer>
   );
 }
