@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    gap: 100px;
+}
+
+.formContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.formContainer textarea {
+    height: 150px;
+}
+.imgContainer {
+    flex: 1;
+    position: relative;
+}
+
+.contactImg {
+    object-fit: contain;
+}
+
+.input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--bgSoft);
+}
+
+.btn {
+padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--btn);
+    color: var(--textSoft);
+    cursor: pointer;
+
+}
