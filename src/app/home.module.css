@@ -11,7 +11,8 @@
 }
 
 .title {
-    font-size: 86px;
+
+    font-size: clamp(56px, 70px, 86px);
 }
 
 .buttons {
@@ -50,4 +51,29 @@
 
 .heroImg {
     object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .brands {
+        margin-left: 50px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .title {
+        font-size: clamp(36px, 50px, 66px);
+    }
+
+
 }

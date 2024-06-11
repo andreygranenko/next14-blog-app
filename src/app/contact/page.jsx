@@ -12,7 +12,7 @@ const ContactPage = () => {
         <input type="text" placeholder="Name and Surname" className={styles.input}/>
         <input type="email" placeholder="Email adress" className={styles.input}/>
         <input type="number" placeholder="Phone number (Optional)" className={styles.input}/>
-        <textarea placeholder="Your Message" className={styles.input}></textarea>
+        <textarea cols={30} rows={10} placeholder="Your Message" className={styles.input}></textarea>
         <button className={styles.btn}>Send Message</button>
 
       </form>

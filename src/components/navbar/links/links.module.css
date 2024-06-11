@@ -27,6 +27,7 @@
     }
 
     .mobileLinks {
+        z-index: 20;
         position: absolute;
         top: 100px;
         right: 0;
