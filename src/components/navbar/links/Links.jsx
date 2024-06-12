@@ -1,10 +1,8 @@
 "use client";
 import styles from './links.module.css'
 import NavLink from "@/components/navbar/links/navLink/navLink";
-import {useState} from "react";
 import Image from "next/image";
-const Links = () => {
-  const [open, setOpen] =  useState(false);
+const Links = ({open, setOpen}) => {
   const links = [
     {
       title: "Homepage",
