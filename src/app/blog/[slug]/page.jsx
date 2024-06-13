@@ -2,18 +2,21 @@ import styles from './singlePost.module.css';
 import Image from "next/image";
 import PostUser from "@/components/postUser/postUser";
 import {Suspense} from "react";
+import {getPost} from "@/components/lib/data";
 
 
-const getData = async (param) => {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${param}`);
-  if (!response.ok) {
-    throw new Error('Failed to fetch data');
-  }
-  return response.json();
-}
+// const getData = async (param) => {
+//   const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${param}`);
+//   if (!response.ok) {
+//     throw new Error('Failed to fetch data');
+//   }
+//   return response.json();
+// }
 const SinglePostPage = async ({params}) => {
 
-  const post = await getData(params.slug);
+  // const post = await getData(params.slug);
+
+  const post = await getPost(params.slug);
 
   return (
     <div className={styles.container}>

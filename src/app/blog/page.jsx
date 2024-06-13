@@ -1,16 +1,22 @@
 import styles from './blog.module.css';
 import PostCard from "@/components/postCard/postCard";
+import {getPosts} from "@/components/lib/data";
 
-const getData = async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-  if (!response.ok) {
-    throw new Error('Failed to fetch data');
-  }
-  return response.json();
-}
+// const getData = async () => {
+//   const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+//   if (!response.ok) {
+//     throw new Error('Failed to fetch data');
+//   }
+//   return response.json();
+// }
 const BlogPage = async () => {
 
-  const posts = await getData();
+
+  // with an api
+  // const posts = await getData();
+
+  // with a local file
+  const posts = await getPosts();
 
 
   return (
