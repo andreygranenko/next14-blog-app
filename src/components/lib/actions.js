@@ -3,6 +3,7 @@
 import {connectToDb} from "@/components/lib/utils";
 import {Post} from "@/components/lib/models";
 import {revalidatePath} from "next/cache";
+import {signIn, signOut} from "@/components/lib/auth";
 
 export const addPost = async (formData) => {
 
@@ -13,7 +14,6 @@ export const addPost = async (formData) => {
 
   const {title, desc, slug, userId} = Object.fromEntries(formData);
 
-  console.log(title, desc, slug, userId);
 
   try {
    connectToDb();
@@ -39,4 +39,14 @@ export const deletePost = async (formData) => {
   } catch (e) {
     console.log(e);
   }
+}
+
+export const handleGithubLogin = async () => {
+  'use server';
+  await signIn('github')
+}
+
+export const handleLogout = async () => {
+  'use server';
+  await signOut()
 }

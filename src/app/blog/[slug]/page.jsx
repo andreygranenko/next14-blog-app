@@ -2,7 +2,6 @@ import styles from './singlePost.module.css';
 import Image from "next/image";
 import PostUser from "@/components/postUser/postUser";
 import {Suspense} from "react";
-import {getPost} from "@/components/lib/data";
 
 
 const getData = async (param) => {
@@ -15,7 +14,8 @@ const getData = async (param) => {
 export const generateMetadata = async ({params}) => {
 
   const {slug} = params;
-  const post = await getPost(slug);
+  // const post = await getPost(slug);
+  const post = await getData(slug);
   return {
     title: post.title,
     description: post.desc
@@ -26,7 +26,7 @@ export const generateMetadata = async ({params}) => {
 const SinglePostPage = async ({params}) => {
 
   const post = await getData(params.slug);
-
+  console.log(post)
   // const post = await getPost(params.[slug]);
 
   return (

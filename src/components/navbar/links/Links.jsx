@@ -2,7 +2,9 @@
 import styles from './links.module.css'
 import NavLink from "@/components/navbar/links/navLink/navLink";
 import Image from "next/image";
-const Links = ({open, setOpen}) => {
+import {handleLogout} from "@/components/lib/actions";
+import {auth} from "@/components/lib/auth";
+const Links = async ({open, setOpen}) => {
   const links = [
     {
       title: "Homepage",
@@ -23,7 +25,8 @@ const Links = ({open, setOpen}) => {
   ];
 
   // TEMPORARY
-  const session = true;
+  const session = await auth();
+  // console.log(session);
   const isAdmin = true;
 
   return (
@@ -32,10 +35,12 @@ const Links = ({open, setOpen}) => {
         {links.map((link, index) => (
           <NavLink key={index} item={link}/>
         ))}
-        {session ? (
+        {session?.user ? (
           <>
-            {isAdmin && (<NavLink item={{title: "Admin", path: '/admin'}}/>)}
-            <button className={styles.logout}>Logout</button>
+            {session.user.isAdmin && (<NavLink item={{title: "Admin", path: '/admin'}}/>)}
+            <form action={handleLogout}>
+              <button className={styles.logout}>Logout</button>
+            </form>
           </>
 
         ) : (

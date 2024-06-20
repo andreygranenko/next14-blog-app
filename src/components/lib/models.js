@@ -15,11 +15,14 @@ const userSchema = new mongoose.Schema({
     min: 6,
     max: 50
   },
+  password: {
+    type: String,
+  },
   img: {
     type: String,
     default: ''
   },
-  isAdminL: {
+  isAdmin: {
     type: Boolean,
     default: false
   }
@@ -55,5 +58,5 @@ const postSchema = new mongoose.Schema({
 
 }, {timestamps: true});
 
-export const User = mongoose.models.User || mongoose.model('User', userSchema);
-export const Post = mongoose.models.Post || mongoose.model('Post', postSchema);
+export const User = mongoose.models?.User || mongoose.model('User', userSchema);
+export const Post = mongoose.models?.Post || mongoose.model('Post', postSchema);
