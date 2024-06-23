@@ -1,3 +1,7 @@
+## Project Overview
+The Blog Project is a modern, responsive blog platform designed for ease of use and customization. Built with Next.js, it leverages the power of React and server-side rendering to deliver fast and SEO-friendly web pages.
+
+
 ## Getting Started
 
 First, install the dependencies:
